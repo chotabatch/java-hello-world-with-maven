@@ -18,11 +18,11 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
-    - name: Build with Maven
 
     - name: Display the path
       run: |
         import os
         print(os.environ['PATH'])
+        print("Welcome to my world")
       shell: python
 
