@@ -32,4 +32,8 @@ jobs:
           print("Hey There!")
           
       shell: python
+    - name: run python script
+      run: | 
+        python scripts/test_py_script.py
+      shell: bash
 
