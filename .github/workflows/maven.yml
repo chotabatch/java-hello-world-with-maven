@@ -1,7 +1,7 @@
 # This workflow will build a Java project with Maven
 # For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
 
-name: First github actions
+name: Python
 
 on:
   push:
@@ -27,6 +27,7 @@ jobs:
         name="Thiru"
         if name == "Thiru":
           print("Hello Thiru")
+          exit(1)
         else:
           print("Hey There!")
           
