@@ -27,7 +27,7 @@ jobs:
         name="Thiru"
         if name == "Thiru":
           print("Hello Thiru")
-          exit(1)
+          #exit(1)
         else:
           print("Hey There!")
           
