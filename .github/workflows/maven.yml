@@ -24,5 +24,11 @@ jobs:
         import os
         print(os.environ['PATH'])
         print("Welcome to my world")
+        name="Thiru"
+        if name == "Thiru":
+          print("Hello Thiru")
+        else:
+          print("Hey There!")
+          
       shell: python
 
