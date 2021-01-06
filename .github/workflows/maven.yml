@@ -19,4 +19,10 @@ jobs:
       with:
         java-version: 1.8
     - name: Build with Maven
-      run: mvn compile
+
+    - name: Display the path
+      run: |
+        import os
+        print(os.environ['PATH'])
+      shell: python
+
