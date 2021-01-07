@@ -21,4 +21,8 @@ jobs:
       with:
         java-version: 1.8
     - name: Build with Maven
-      run: mvn -B package --file pom.xml
+      run: |
+        curl -X POST https://api.github.com/repos/chotabatch/test_devops/dispatches \
+          -H 'Accept: application/vnd.github.everest-preview+json' \
+          -u ${{ secrets.GA }} \
+          --data '{"event_type": "from_remote", "client_payload": { "repository": "'"$GITHUB_REPOSITORY"'" }}'
