@@ -10,7 +10,7 @@ on:
     branches: [ master ]
 
 jobs:
-  my_first_job:
+  parallel_stage1:
       runs-on: ubuntu-latest
 
       steps:
@@ -25,7 +25,7 @@ jobs:
             -H 'Accept: application/vnd.github.everest-preview+json' \
             -u ${{ secrets.GA }} \
             --data '{"event_type": "from_remote", "client_payload": { "repository": "'"$GITHUB_REPOSITORY"'" }}'
-  my_second_job:
+  parallel_stage2:
       runs-on: ubuntu-latest
       
       steps:
@@ -33,4 +33,11 @@ jobs:
         run: |
           echo "Second stage"
           
+  sequential_stage1:
+      needs: parallel_stage1
+      runs-on: ubuntu-latest
       
+      steps:
+      - name: Second stage
+        run: |
+          echo "Second stage"
